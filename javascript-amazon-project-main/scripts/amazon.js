@@ -1,3 +1,5 @@
+import {cart} from '../data/cart.js';
+
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -91,4 +93,4 @@ document.querySelectorAll('.js-add-to-cart')
     });
   });
 
-// 12:15:00
+// 12:28:00
