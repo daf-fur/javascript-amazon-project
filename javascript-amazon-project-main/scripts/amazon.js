@@ -1,4 +1,5 @@
 import {cart} from '../data/cart.js';
+import {products} from '../data/products.js';
 
 let productsHTML = '';
 
@@ -93,4 +94,4 @@ document.querySelectorAll('.js-add-to-cart')
     });
   });
 
-// 12:28:00
+// 12:42:11
