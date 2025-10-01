@@ -1,11 +1,15 @@
 const xhr = new XMLHttpRequest();
- 
-xhr.addEventListener('load', () => {
+
+xhr.addEventListener("load", () => {
   console.log(xhr.response);
 });
 
-xhr.open('GET', 'https://supersimplebackend.dev');
+/*
+xhr.addEventListener("error", () => console.log("Request failed"));
+xhr.addEventListener("loadend", () => console.log("Request finished"));
+*/
+
+xhr.open("GET", "https://supersimplebackend.dev");
 xhr.send(); //asynchronous, does not wait for anything, immediately runs next code
 
-
-// 19:49:47
+// 20:03:36
