@@ -2,7 +2,7 @@ const xhr = new XMLHttpRequest();
 
 xhr.addEventListener("load", () => {
   console.log(xhr.response);
-});
+}); // waits for the request to complete before executing
 
 /*
 xhr.addEventListener("error", () => console.log("Request failed"));
