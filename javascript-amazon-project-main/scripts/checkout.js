@@ -6,22 +6,55 @@ import {loadCart} from "../data/cart.js";
 // import { Car } from "../data/car.js";
 // import '../data/backend-practice.js';
 
+Promise.all([
+  new Promise((resolve) => {
+    loadProducts(() => {
+      resolve('value1');
+    });
+  }),
+  new Promise((resolve) => {
+      loadCart(() => {
+        resolve();
+      });
+    })
+
+  ]).then((values) => {
+    console.log(values);
+    renderOrderSummary();
+    renderPaymentSummary();
+});
+
 /*
 new Promise((resolve) => {
   loadProducts(() => {
-    resolve();
+    resolve('value1');
   });
+
+
+}).then((value) => {
+  console.log(value);
+
+  return new Promise((resolve) => {
+    loadCart(() => {
+      resolve();
+    });
+  });
+
+
 }).then(() => {
   renderOrderSummary();
   renderPaymentSummary();
 });
 */
 
+/*
 loadProducts(() => {
   loadCart(() => {
     renderOrderSummary();
     renderPaymentSummary();
   });
 });
+*/
+
 
 // 20:44:17
