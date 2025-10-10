@@ -1,27 +1,22 @@
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
-import { loadProducts } from "../data/products.js";
-import {loadCart} from "../data/cart.js";
+import { loadProducts, loadProductsFetch } from "../data/products.js";
+import { loadCart } from "../data/cart.js";
 // import "../data/cart-class.js";
 // import { Car } from "../data/car.js";
 // import '../data/backend-practice.js';
 
 Promise.all([
+  loadProductsFetch(),
   new Promise((resolve) => {
-    loadProducts(() => {
-      resolve('value1');
+    loadCart(() => {
+      resolve();
     });
   }),
-  new Promise((resolve) => {
-      loadCart(() => {
-        resolve();
-      });
-    })
-
-  ]).then((values) => {
-    console.log(values);
-    renderOrderSummary();
-    renderPaymentSummary();
+]).then((values) => {
+  console.log(values);
+  renderOrderSummary();
+  renderPaymentSummary();
 });
 
 /*
@@ -56,5 +51,4 @@ loadProducts(() => {
 });
 */
 
-
-// 20:44:17
+// 21:10:05
