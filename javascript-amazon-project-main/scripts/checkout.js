@@ -6,19 +6,28 @@ import { loadCart } from "../data/cart.js";
 // import { Car } from "../data/car.js";
 // import '../data/backend-practice.js';
 
+/*
 Promise.all([
-  loadProductsFetch(),
+  new Promise((resolve) => {
+    loadProducts(() => {
+      resolve("value1");
+    });
+  }),
   new Promise((resolve) => {
     loadCart(() => {
       resolve();
     });
   }),
-]).then((values) => {
-  console.log(values);
+]).then(() => {
   renderOrderSummary();
   renderPaymentSummary();
 });
+*/
 
+loadProducts(() => {
+  renderOrderSummary();
+  renderPaymentSummary();
+});
 /*
 new Promise((resolve) => {
   loadProducts(() => {
