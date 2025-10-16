@@ -8,11 +8,15 @@ import { loadCart } from "../data/cart.js";
 
 async function loadPage() {
   try {
+    // throw 'error1';
+
     await loadProductsFetch(); //returns a promise
 
-    const value = await new Promise((resolve) => {
+    const value = await new Promise((resolve, reject) => {
+      // throw 'error2'; // synchronously, right away
       loadCart(() => {
-        resolve("value3");
+        // reject('error3'); // asynchronously
+      resolve("value3");
       });
     });
 
