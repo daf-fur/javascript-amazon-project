@@ -6,8 +6,7 @@ A fully responsive replica of Amazon built using HTML, CSS, and JavaScript. This
 - DOM Manipulation
 - UI Design
 
-## License
-Distributed under the Unlicense License.
-
 ## Acknowledgements
-- Inspired by this tutorial: https://www.youtube.com/watch?v=YOUR_LINK
+- Inspired by this YouTube tutorial:
+  https://www.youtube.com/watch?v=EerdGm-ehJQ
+
